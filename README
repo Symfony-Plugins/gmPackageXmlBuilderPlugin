@@ -1,0 +1,74 @@
+gmPackageXmlBuilderPlugin
+========
+The gmPackageXmlBuilderPlugin is task to make package.xml for plugins, using PEAR/PackageFileManager.
+
+Installation
+
+    symfony plugin:install gmPackageXmlBuilderPlugin
+    symfony cc
+
+This task use the PEAR_PackageFileManager2.
+
+    pear install PEAR_PackageFileManager
+
+And make setting file to sf_root/config/gm_package_xml_builder_plugin.yml for global setting.
+
+    builder:
+      make_backup: on
+      pear_path: /usr/local/php/lib/php
+    
+    config:
+      symfony:
+        channel: pear.symfony-project.com
+        min: 1.1.0
+        max: 1.1.6
+        exclude: ~
+      name: Name
+      user: User name
+      email: user@example.com
+      
+      license: MIT License
+      license_uri: ~
+      
+      php: {min: 5.1.0}
+      pearinstaller: {min: 1.4.1}
+
+Local setting for each plugins is in plugins/pluginName/config/builder.yml
+
+    config:
+      summary: ****summary****
+      description: ****description****
+      
+      dependencies:
+          -
+            type: require
+            name: PEAR_PackageFileManager
+            channel: pear.php.net
+            min: 1.6.3
+            max: ~
+            recommended: ~
+            exclude: ~
+            providesextension: ~
+            nodefault: ~
+          -
+            type: require
+            name: TEST_OPTION
+            channel: pear.php.net
+            min: 1.0.0
+            max: 1.0.5
+            recommended: ~
+            exclude: ~
+            providesextension: ~
+            nodefault: ~
+          -
+            type: optional
+            name: URL_TEST
+            uri: http://www.example.com/example.tgz
+            providesextension: ~
+            nodefault: ~
+
+usage
+
+    symfony gomo:build-package-xml [--dir="..."] [--output|-o="..."] [--api-version|-A="..."] [--release-version|-R="..."] [--api-stability|-a="..."] [--release-stability|-r="..."] [--notes|-N="..."] name
+
+    symfony gomo:build-package-xml -o f -A 0.1.0 -R 0.1.0 -a alpha -r alpha -N 'First release' pluginName

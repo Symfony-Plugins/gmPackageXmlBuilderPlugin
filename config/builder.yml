@@ -1,0 +1,3 @@
+config:
+  summary: The task to make package.xml for plugins.
+  description: The gmPackageXmlBuilderPlugin is task to make package.xml for plugins, using PEAR/PackageFileManager

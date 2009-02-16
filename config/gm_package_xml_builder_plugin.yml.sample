@@ -1,0 +1,32 @@
+builder:
+  make_backup: on
+  pear_path: /usr/local/php/lib/php
+
+config:
+  symfony:
+    channel: pear.symfony-project.com
+    min: 1.1.0
+    max: 1.1.6
+    exclude: ~
+  name: Name
+  user: User name
+  email: user@example.com
+  
+  license: MIT License
+  license_uri: ~
+  
+  php: {min: 5.1.0}
+  pearinstaller: {min: 1.4.1}
+  
+#you can over write cosole options and local settings
+#config:
+#  summary: ****summry****
+#  description: ****description****
+#  
+#
+#console:
+#  api-stability: stable
+#  release-stability: stable
+#  api-version: 1.0.0
+#  release-version: 1.0.0
+#  notes: ------

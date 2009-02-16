@@ -1,0 +1,55 @@
+config:
+  summary: ****summary****
+  description: ****description****
+  
+  dependencies:
+      -
+        type: require
+        name: PEAR_PackageFileManager
+        channel: pear.php.net
+        min: 1.6.3
+        max: ~
+        recommended: ~
+        exclude: ~
+        providesextension: ~
+        nodefault: ~
+      -
+        type: require
+        name: TEST_OPTION
+        channel: pear.php.net
+        min: 1.0.0
+        max: 1.0.5
+        recommended: ~
+        exclude: ~
+        providesextension: ~
+        nodefault: ~
+      -
+        type: optional
+        name: URL_TEST
+        uri: http://www.yahoo.co.jp/
+        providesextension: ~
+        nodefault: ~
+  
+#you can over write cosole options and global settings
+#console:
+#  api-stability: stable
+#  release-stability: stable
+#  api-version: 1.0.0
+#  release-version: 1.0.0
+#  notes: ------
+
+#builder:
+#  make_backup: on
+#  pear_path: /usr/local/php/lib/php
+#
+#config:
+#  symfony:
+#    channel: pear.symfony-project.com
+#    min: 1.1.0
+#    max: 1.1.6
+#  name: Name
+#  user: User name
+#  email: user@example.com
+#  
+#  php: {min: 5.1.0}
+#  pearinstaller: {min: 1.4.1}
