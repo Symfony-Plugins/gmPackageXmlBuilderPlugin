@@ -180,7 +180,7 @@ EOF;
    */
   private function getPfm2Xml()
   {
-    
+    set_include_path(get_include_path().PATH_SEPARATOR.$this->getGmOption('builder.pear_path'));
     require_once $this->getGmOption('builder.pear_path','/usr/local/php/lib/php').DIRECTORY_SEPARATOR.'PEAR'.DIRECTORY_SEPARATOR.'PackageFileManager2.php';
     require_once $this->getGmOption('builder.pear_path','/usr/local/php/lib/php').DIRECTORY_SEPARATOR.'PEAR'.DIRECTORY_SEPARATOR.'PackageFileManager'.DIRECTORY_SEPARATOR.'File.php';
     $packagexml = new PEAR_PackageFileManager2;
